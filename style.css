@@ -1,0 +1,301 @@
+/* ---------- Цвета и базовые настройки ---------- */
+:root {
+  --paper: #f5ecd9;
+  --paper-dark: #ebdfc4;
+  --ink: #2b2420;
+  --ink-soft: #5c5048;
+  --red: #b3261e;
+  --red-dark: #8c1c16;
+  --card: #fbf6ec;
+  --line: #d9c9a8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--paper);
+  /* лёгкая «бумажная» текстура из точек */
+  background-image:
+    radial-gradient(rgba(120, 90, 50, 0.07) 1px, transparent 1px),
+    radial-gradient(rgba(120, 90, 50, 0.05) 1px, transparent 1px);
+  background-size: 22px 22px, 13px 13px;
+  background-position: 0 0, 7px 9px;
+}
+
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", "PT Serif", Georgia, serif;
+  line-height: 1.2;
+}
+
+/* ---------- Шапка ---------- */
+.hero {
+  text-align: center;
+  padding: 64px 0 56px;
+  border-bottom: 1px solid var(--line);
+}
+
+.envelope {
+  position: relative;
+  width: 84px;
+  height: 56px;
+  margin: 0 auto 24px;
+  background: var(--red);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(140, 28, 22, 0.25);
+}
+
+.envelope__flap {
+  position: absolute;
+  inset: 0;
+  background: var(--red-dark);
+  clip-path: polygon(0 0, 100% 0, 50% 58%);
+}
+
+.envelope__seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -10px 0 0 -8px;
+  background: #e8c36a;
+  border-radius: 50%;
+}
+
+.hero__title {
+  margin: 0;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  font-weight: 900;
+  color: var(--red);
+}
+
+.hero__slogan {
+  margin: 8px 0 32px;
+  font-size: clamp(1.1rem, 3.5vw, 1.45rem);
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+/* ---------- Кнопка ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 34px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: var(--red);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(179, 38, 30, 0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  background: var(--red-dark);
+  transform: translateY(-2px);
+}
+
+.btn:focus-visible,
+.card__link:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* ---------- Заголовки секций ---------- */
+.section-title {
+  margin: 0 0 20px;
+  font-size: clamp(1.7rem, 5vw, 2.2rem);
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 12px auto 0;
+  background: var(--red);
+}
+
+/* ---------- О канале ---------- */
+.about {
+  padding-top: 56px;
+  padding-bottom: 24px;
+}
+
+.about__text {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- Карточки видео ---------- */
+.videos {
+  padding-top: 40px;
+  padding-bottom: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 720px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(60, 40, 20, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 22px rgba(60, 40, 20, 0.14);
+}
+
+.card__cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  font-family: "Playfair Display", serif;
+  font-size: 3.4rem;
+  font-weight: 900;
+  color: var(--paper);
+}
+
+.card__cover--netflix { background: #8c1c16; }
+.card__cover--spirit  { background: #c9a227; color: var(--ink); }
+.card__cover--lego    { background: #b3261e; }
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20px 22px 22px;
+}
+
+.card__title {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+}
+
+.card__text {
+  flex: 1;
+  margin: 0 0 16px;
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.card__link {
+  align-self: flex-start;
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.card__link:hover {
+  border-color: var(--red);
+}
+
+/* ---------- Подписка ---------- */
+.subscribe {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 64px;
+}
+
+.subscribe__text {
+  margin: 0 0 18px;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* ---------- Подвал ---------- */
+.footer {
+  padding: 24px 0;
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ---------- Всплывающее сообщение ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  max-width: calc(100% - 32px);
+  padding: 12px 22px;
+  font-size: 1rem;
+  color: #fff;
+  background: var(--ink);
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition: opacity 0.25s, transform 0.25s;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+/* ---------- Телефоны ---------- */
+@media (max-width: 480px) {
+  body {
+    font-size: 17px;
+  }
+
+  .hero {
+    padding: 44px 0 40px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
