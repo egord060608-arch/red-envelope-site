@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Красный конверт — как строятся бизнес-империи</title>
+  <meta name="description" content="YouTube-канал «Красный конверт»: истории о том, как строятся бизнес-империи.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <div class="envelope" aria-hidden="true">
+        <span class="envelope__flap"></span>
+        <span class="envelope__seal"></span>
+      </div>
+      <h1 class="hero__title">Красный конверт</h1>
+      <p class="hero__slogan">Как строятся бизнес-империи</p>
+      <a class="btn" href="#" data-placeholder="subscribe">Подписаться</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="about container" id="about">
+      <h2 class="section-title">О канале</h2>
+      <p class="about__text">
+        Мы рассказываем истории компаний, которые знает весь мир: с чего они начинали,
+        какие решения сделали их великими и где они чуть не потеряли всё.
+        Без скучных графиков и сложных терминов — просто хорошие истории о бизнесе,
+        которые можно посмотреть за вечерним чаем.
+      </p>
+    </section>
+
+    <section class="videos container" id="videos">
+      <h2 class="section-title">Видео</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card__cover card__cover--netflix" aria-hidden="true"><span>N</span></div>
+          <div class="card__body">
+            <h3 class="card__title">Netflix</h3>
+            <p class="card__text">Как сервис проката DVD по почте победил Blockbuster и изменил то, как мир смотрит кино.</p>
+            <a class="card__link" href="#" data-placeholder="video">Смотреть →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__cover card__cover--spirit" aria-hidden="true"><span>✈</span></div>
+          <div class="card__body">
+            <h3 class="card__title">Spirit Airlines</h3>
+            <p class="card__text">Самая нелюбимая авиакомпания Америки: как сверхнизкие цены принесли успех — и чем за них пришлось платить.</p>
+            <a class="card__link" href="#" data-placeholder="video">Смотреть →</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__cover card__cover--lego" aria-hidden="true"><span>▦</span></div>
+          <div class="card__body">
+            <h3 class="card__title">Lego</h3>
+            <p class="card__text">Из маленькой столярной мастерской — в крупнейшего производителя игрушек, пройдя через почти полное банкротство.</p>
+            <a class="card__link" href="#" data-placeholder="video">Смотреть →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="subscribe container">
+      <p class="subscribe__text">Новые истории — каждую неделю.</p>
+      <a class="btn" href="#" data-placeholder="subscribe">Подписаться</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year">2026</span> «Красный конверт». Истории о бизнесе.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
